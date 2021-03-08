@@ -11,6 +11,9 @@ import de.markuspauer.quarkus.entity.Customer;
 
 @ApplicationScoped
 public class EntityProducer implements Serializable {
+
+    private static final long serialVersionUID = 8771364888294100315L;
+
     @Produces
     Customer createCustomer() {
         var customer = new Customer();
@@ -18,4 +21,5 @@ public class EntityProducer implements Serializable {
         customer.setLastName(new LastName());
         return customer;
     }
+    
 }

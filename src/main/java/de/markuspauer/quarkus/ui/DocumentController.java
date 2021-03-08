@@ -8,6 +8,9 @@ import javax.inject.Named;
 @Named
 @SessionScoped
 public class DocumentController implements Serializable {
+    
+    private static final long serialVersionUID = -8326352988482439046L;
+    
     private String hello = "Hello";
 
     public String getHello() {
@@ -25,4 +28,5 @@ public class DocumentController implements Serializable {
         }
         this.hello = output;
     }
+    
 }

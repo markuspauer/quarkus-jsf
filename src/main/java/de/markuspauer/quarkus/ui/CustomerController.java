@@ -7,9 +7,8 @@ import javax.inject.Named;
 
 import org.jboss.logging.Logger;
 
-import de.markuspauer.quarkus.attribute.FirstName;
-import de.markuspauer.quarkus.attribute.LastName;
 import de.markuspauer.quarkus.entity.Customer;
+import de.markuspauer.quarkus.service.CustomerService;
 
 @Named
 @RequestScoped
@@ -20,6 +19,9 @@ public class CustomerController {
 
     @Inject
     private Customer customer;
+
+    @Inject
+    CustomerService customerService;
 
     @PostConstruct
     void init() {
@@ -32,5 +34,6 @@ public class CustomerController {
 
     public void save() {
         log.info("Customer: " + this.customer);
+        customerService.save(customer);
     }
 }

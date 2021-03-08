@@ -5,7 +5,12 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.MappedSuperclass;
 
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
 @MappedSuperclass
+@Data
+@NoArgsConstructor
 public abstract class BaseEntity {
 
     @Id
